@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "258187769135",
+    "firebase_url": "https://lojaandrey-86ddf.firebaseio.com",
+    "project_id": "lojaandrey-86ddf",
+    "storage_bucket": "lojaandrey-86ddf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258187769135:android:bf2de28b3819d116dc1dda",
+        "android_client_info": {
+          "package_name": "br.com.guerra.loja_teste_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258187769135-d14q1m716p5g60g1qkiefojddcmt8r40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXABYMBkCZl1XcpjDsZ1MWNg7lWRgmNNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258187769135-d14q1m716p5g60g1qkiefojddcmt8r40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
