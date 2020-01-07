@@ -8,6 +8,8 @@ import 'package:loja_teste_2/models/cart_model.dart';
 import 'package:loja_teste_2/models/user_model.dart';
 import 'package:loja_teste_2/screens/login_screen.dart';
 
+import 'cart_screen.dart';
+
 class ProductScreen extends StatefulWidget {
 
   final ProductData product;
@@ -130,6 +132,10 @@ class _ProductScreenState extends State<ProductScreen> {
                         cartProduct.category = product.category;
 
                         CartModel.of(context).addCartItem(cartProduct);
+
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context)=>CartScreen())
+                        );
                       } else {
                           Navigator.of(context).push(
                             MaterialPageRoute(builder: (context)=>LoginScreen())
