@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_teste_2/models/cart_model.dart';
 import 'package:loja_teste_2/models/user_model.dart';
 import 'package:loja_teste_2/screens/login_screen.dart';
+import 'package:loja_teste_2/tiles/cart_tile.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartScreen extends StatelessWidget {
@@ -63,9 +64,21 @@ class CartScreen extends StatelessWidget {
             );
           } else if (model.products == null || model.products.length == 0){
             return Center(
-              child: Text("Nenhum produto no carrinhg!",
+              child: Text("Nenhum produto no carrinho!",
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,),
+            );
+          } else {
+            return ListView(
+              children: <Widget>[
+                Column(
+                  children: model.products.map(
+                      (product){
+                        return CartTile(product);
+                      }
+                  ).toList(),
+                )
+              ],
             );
           }
         }
