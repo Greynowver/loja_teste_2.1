@@ -15,6 +15,8 @@ class CartProduct {
 
   ProductData productData;
 
+  CartProduct();
+
   CartProduct.fromDocument(DocumentSnapshot document){
     cid = document.documentID;
     category = document.data["categoty"];
@@ -30,7 +32,7 @@ class CartProduct {
       "pid" : pid,
       "quantity" : quantity,
       "size" : size,
-      "product" : productData.toResumedMap(),
+      //"product" : productData.toResumedMap(),
 
     };
   }
