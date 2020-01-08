@@ -4,6 +4,7 @@ import 'package:loja_teste_2/models/user_model.dart';
 import 'package:loja_teste_2/screens/login_screen.dart';
 import 'package:loja_teste_2/tiles/cart_tile.dart';
 import 'package:loja_teste_2/widgets/discount_card.dart';
+import 'package:loja_teste_2/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartScreen extends StatelessWidget {
@@ -79,7 +80,8 @@ class CartScreen extends StatelessWidget {
                       }
                   ).toList(),
                 ),
-                DiscountCard()
+                DiscountCard(),
+                ShipCard()
               ],
             );
           }
