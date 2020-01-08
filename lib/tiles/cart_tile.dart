@@ -14,6 +14,7 @@ class CartTile extends StatelessWidget {
 
     Widget _buildContend(){
       return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(8.0),
@@ -27,6 +28,8 @@ class CartTile extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(8.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
                     cartProduct.productData.title,
@@ -45,14 +48,18 @@ class CartTile extends StatelessWidget {
                     ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
                         icon: Icon(Icons.remove),
-                        onPressed: (){},
+                        color: Theme.of(context).primaryColor,
+                        onPressed: cartProduct.quantity > 1 ?
+                            (){} : null,
                       ),
                       Text(cartProduct.quantity.toString()),
                       IconButton(
                         icon: Icon(Icons.add),
+                        color: Theme.of(context).primaryColor,
                         onPressed: (){},
                       ),
                       FlatButton(
@@ -75,7 +82,7 @@ class CartTile extends StatelessWidget {
       child: cartProduct.productData == null ?
         FutureBuilder<DocumentSnapshot>(
           future: Firestore.instance.collection("products").document(cartProduct.category)
-          .collection("itens").document(cartProduct.pid).get(),
+          .collection("items").document(cartProduct.pid).get(),
           builder: (context, snapshot){
             if(snapshot.hasData){
               cartProduct.productData = ProductData.fromDocument(snapshot.data);
